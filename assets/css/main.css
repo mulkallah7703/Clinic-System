@@ -12,24 +12,24 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --background-color: #E9ECEF;       /* خلفية رمادية فاتحة ناعمة بدل الأبيض */
-  --surface-color: #F8F9FA;          /* سطح رمادي أبيض داكن للعناصر مثل الكروت */
-  --default-color: #2E2E2E;          /* نص رمادي غامق للقراءة */
-  --heading-color: #003B73;          /* كحلي داكن للعناوين */
+  --background-color: #598abd;       /* خلفية رمادية فاتحة ناعمة بدل الأبيض */
+  --surface-color: #598abd;          /* سطح اسود أبيض داكن للعناصر مثل الكروت */
+  --default-color:black;          /* نص اسود غامق للقراءة */
+  --heading-color: rgb(34, 18, 86);          /* ذهبي داكن للعناوين */
   --accent-color: #0D6EFD;           /* أزرق هادئ للأزرار والروابط */
-  --contrast-color: #F8F9FA;         /* نص فاتح على خلفيات داكنة */
+  --contrast-color: black;         /* نص فاتح على خلفيات داكنة */
 }
 
 
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #2E2E2E;              /* نفس لون النص الرئيسي */
+  --nav-color: #598abd;              /* نفس لون النص الرئيسي */
   --nav-hover-color: #0D6EFD;        /* نفس لون الـ accent-color */
-  --nav-mobile-background-color: #E9ECEF; /* نفس خلفية الموقع */
-  --nav-dropdown-background-color: #F8F9FA; /* خلفية سطحية للعناصر المنسدلة */
-  --nav-dropdown-color: #2E2E2E;     /* لون نص القوائم المنسدلة */
-  --nav-dropdown-hover-color: #0D6EFD; /* لون التمرير */
+  --nav-mobile-background-color: #598abd; /* نفس خلفية الموقع */
+  --nav-dropdown-background-color:#598abd; /* خلفية سطحية للعناصر المنسدلة */
+  --nav-dropdown-color: #ffffff;     /* لون نص القوائم المنسدلة */
+  --nav-dropdown-hover-color: #0dfd61; /* لون التمرير */
 }
 
 
@@ -37,10 +37,10 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #E9ECEF; /* خلفية رمادية فاتحة ناعمة */
-  --surface-color: #F8F9FA;    /* سطح رمادي أبيض داكن */
-  --default-color: #2E2E2E;    /* نص رمادي غامق */
-  --heading-color: #003B73;    /* كحلي للعناوين */
+  --background-color: #598abd; /* خلفية رمادية فاتحة ناعمة */
+  --surface-color: #598abd;    /* سطح رمادي أبيض داكن */
+  --default-color:  #ffffff;    /* نص رمادي غامق */
+  --heading-color: #b09500;    /* كحلي للعناوين */
   --accent-color: #0D6EFD;     /* أزرق هادئ */
   --contrast-color: #F8F9FA;   /* لون نص على خلفيات داكنة */
 }
@@ -50,11 +50,11 @@
 
 
 .dark-background {
-  --background-color: #012F41; /* أزرق داكن */
-  --default-color: #CED4DA;    /* رمادي فاتح بدل الأبيض */
-  --heading-color: #DEE2E6;    /* رمادي فاتح للعناوين */
-  --surface-color: #023644;    /* أزرق داكن للكروت */
-  --contrast-color: #CED4DA;   /* نص خفيف */
+  --background-color: #598abd; /* أزرق داكن */
+  --default-color: #ffffff;    /* ابيض*/
+  --heading-color: #b09500;    /* ذهبي غامق للعناوين */
+  --surface-color:#598abd;    /* اسود داكن للكروت */
+  --contrast-color: #F8F9FA;   /* نص خفيف */
 }
 
 
@@ -78,7 +78,7 @@ body {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 a:hover {
@@ -102,7 +102,7 @@ h6 {
   display: none;
   background: #df1529;
   color: #ffffff;
-  text-align: left;
+  text-align: right;
   padding: 15px;
   margin-bottom: 24px;
   font-weight: 600;
@@ -238,7 +238,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #ffffff;
+  --background-color: #18284e;
 }
 
 /*--------------------------------------------------------------
@@ -502,6 +502,27 @@ h6 {
     display: block;
   }
 }
+.typewriter {
+  overflow: hidden;            /* Hide overflow */
+  white-space: nowrap;         /* Keep text in one line */
+  border-right: 2px solid black; /* Cursor */
+  width: 0;
+  animation: typing 3s steps(13, end) forwards, blink 0.7s step-end infinite;
+  font-weight: bold;           /* Make number bold */
+  font-size: 1.2rem;           /* Adjust size as needed */
+  display: inline-block;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 13ch }           /* Number of characters */
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+  100% { border-color: black }
+}
+
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -1005,6 +1026,7 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -1243,20 +1265,21 @@ section,
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%);
+  
 }
 
 .hero .hero-visual .main-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .hero .hero-visual .main-image .floating-card {
   position: absolute;
   background: var(--surface-color);
   padding: 1.5rem;
-  border-radius: 16px;
+  border-radius: 40px;
   box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 85%);
   backdrop-filter: blur(10px);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -3674,6 +3697,59 @@ section,
   background-color: color-mix(in srgb, var(--accent-color), black 15%);
   transform: translateX(5px);
 }
+.glow-border {
+  position: absolute;
+  bottom: 20;
+  top: 27%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: conic-gradient(from 0deg, #f8d700, #ff6600, #f8d700);
+  animation: rotateGlow 4s linear infinite;
+  z-index: 0;
+  filter: blur(6px);
+  pointer-events: none; /* مهم لمنع التأثير عند التأشير */
+}
+
+.specialty-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 160px; /* حجم أقصى للصورة */
+  margin: 0 auto;
+  aspect-ratio: 1 / 1; /* يحافظ على الشكل الدائري */
+}
+
+.specialty-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+/* الحركة الدائرية */
+@keyframes rotateGlow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* دعم للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .glow-border {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
 
 .department-details .department-hero .action-group .btn-secondary {
   display: flex;
